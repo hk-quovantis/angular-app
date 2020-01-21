@@ -1,0 +1,48 @@
+<div class="col-sm-6 mt-1">
+    <button class="btn btn-danger" (click)="redirectBack()">Back</button>
+</div>
+
+<div class="col-sm-6 offset-sm-3 mt-5">
+    <form class="form-horizontal" [formGroup]="eventForm" (ngSubmit)="saveEvent()">
+        <div class="form-group row">
+            <label for="title" class="label-control col-sm-3">Title:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" [ngClass]="{'error': submitted && f.title.errors}" placeholder="Enter event title..." formControlName="title">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="title" class="label-control col-sm-3">Start Date:</label>
+            <div class="col-sm-9">
+                <input type="datetime-local" [ngClass]="{'error': submitted && f.startDate.errors}" class="form-control" formControlName="startDate">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="title" class="label-control col-sm-3">End Date:</label>
+            <div class="col-sm-9">
+                <input type="datetime-local" [ngClass]="{'error': submitted && f.endDate.errors}" class="form-control" formControlName="endDate">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="title" class="label-control col-sm-3">Search:</label>
+            <div class="col-sm-9">
+                <ng-multiselect-dropdown [placeholder]="'Search users for invitation...'" [data]="usersList" [settings]="dropdownSettings" [ngClass]="{'error': submitted && f.users.errors}" formControlName="users"></ng-multiselect-dropdown>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="title" class="label-control col-sm-3">Descriptions:</label>
+            <div class="col-sm-9">
+                <textarea cols="30" rows="5" class="form-control" [ngClass]="{'error': submitted && f.descriptions.errors}" placeholder="Event descriptions..." formControlName="descriptions"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <button class="btn btn-primary btn-block" [disabled]="!eventForm.valid">SAVE</button>
+        </div>
+
+    </form>
+</div>

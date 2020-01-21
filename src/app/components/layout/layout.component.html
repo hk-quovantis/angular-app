@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+
+    <body>
+        <div class="container mt-3">
+            <div class="col-sm-12 pt-1">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item" >
+                                <a class="nav-link" routerLink="/welcome/home" routerLinkActive="active">Home</a>
+                            </li>
+                            <li class="nav-item" >
+                                <a class="nav-link" routerLink="/welcome/event" routerLinkActive="active" (click)="updateEvent()">Event</a>
+                            </li>
+                            <li class="nav-item" >
+                                <a class="nav-link" routerLink="/welcome/profile" routerLinkActive="active">Profile</a>
+                            </li>
+                            <li class="nav-item pull-right">
+                                <a class="nav-link btn" href="javascript:void(0)" (click)="logout()" >Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </body>
+</html>

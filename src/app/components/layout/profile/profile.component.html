@@ -1,0 +1,54 @@
+<div class="col-sm-6 offset-sm-3 mt-5">
+
+    <div class="col-sm-6 offset-sm-5">
+        <img [src]="image" class="rounded" alt="User profile" width="100px" height="100px">
+    </div>    
+
+    <form class="form-horizontal pt-5 pb-5" [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+        <div class="form-group row">
+            <label for="name" class="label-control col-sm-3">Name:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" [ngClass]="{'error': submitted && f.name.errors}" placeholder="Enter your name..." formControlName="name" [(ngModel)]="name">
+            </div>                        
+        </div>
+        <div class="form-group row">
+                <label for="email" class="label-control col-sm-3">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" [ngClass]="{'error': submitted && f.name.errors}" placeholder="Enter your email..." formControlName="email" [(ngModel)]="email">
+                </div>                        
+            </div>
+        <div class="form-group row">
+            <label for="address" class="label-control col-sm-3">Address:</label>                    
+        </div>
+        <div class="form-group offset-sm-3 row">
+            <label for="city" class="label-control col-sm-3">City:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" [ngClass]="{'error': submitted && f.city.errors}" placeholder="Enter your city..." formControlName="city" [(ngModel)]="city">
+            </div>
+        </div>
+        <div class="form-group offset-sm-3 row">
+            <label for="state" class="label-control col-sm-3">State:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" [ngClass]="{'error': submitted && f.state.errors}" placeholder="Enter your state..." formControlName="state" [(ngModel)]="state">
+            </div>
+        </div>
+        <div class="form-group offset-sm-3 row">
+            <label for="pinCode" class="label-control col-sm-3">Pin Code:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" [ngClass]="{'error': submitted && f.pinCode.errors}" placeholder="Enter your pin code..." formControlName="pinCode" [(ngModel)]="pinCode">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="image" class="label-control col-sm-3">Profile:</label>
+            <div class="col-sm-9">
+                <input type="file" class="form-control" [ngClass]="{'error': submitted && f.image.errors}" (change)="onProfileChange($event)"  formControlName="image">
+            </div>                        
+        </div>
+        <div class="form-group"></div>
+        <div class="form-group row">
+            <div class="col-xs-3 offset-sm-4">
+                <button class="btn btn-primary btn-md" [disabled]="!profileForm.valid || disabledBtn">SAVE</button>
+            </div>
+        </div>
+    </form>
+</div>

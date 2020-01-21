@@ -1,0 +1,8 @@
+.pad-top-50 {
+    padding-top: 200px;
+}
+
+.btn:hover {
+    background-color: #343a40;
+    color: #ffff;
+}

@@ -1,0 +1,35 @@
+<div class="col-sm-10 offset-sm-1 mt-5 pad-top-50" *ngIf="shown">
+    <div class="card-deck">
+        <div class="card bg-light"> 
+            <a class="btn" routerLink="my-event" (click)="hideContent()">
+                <div class="card-body text-center">
+                    <p class="card-text">
+                        My Events
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="card bg-light">
+            <a class="btn" routerLink="create-event" (click)="hideContent()">
+                <div class="card-body text-center">
+                    <p class="card-text">Create Event</p>
+                </div>
+            </a>
+        </div>
+        <div class="card bg-light">
+            <button class="btn">
+                <div class="card-body text-center" routerLink="invitation" (click)="hideContent()">
+                    <p class="card-text">Invitation</p>
+                </div>
+            </button>
+        </div>
+        <div class="card bg-light">
+            <button class="btn">
+                <div class="card-body text-center">
+                    <p class="card-text">Public Event</p>
+                </div>
+            </button>
+        </div> 
+    </div>
+</div>      
+<router-outlet></router-outlet>
